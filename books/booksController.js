@@ -2,7 +2,7 @@ const express = require('express');
 const books = express();
 const preExistingBooks = require('./preExistingBooks.json');
 
-booksStored = preExistingBooks;
+booksStored = [];
 
 books.get('/', (req, res) => {
     booksStored.sort( (a,b) => {
