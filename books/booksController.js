@@ -11,9 +11,7 @@ books.get('/', (req, res) => {
         else if ( a.title >= b.title)
             return 1
     })
-
-
-
+    console.log("GET - \n", booksStored)
     res.status(200).json({ "books": booksStored });
 })
 
@@ -22,11 +20,13 @@ books.post('/', (req, res) => {
     bookToStore.id = booksStored.length + 1;
     booksStored.push(bookToStore);
 
+    console.log("POST - \n", bookToStore);
     res.status(201).json(bookToStore)
 })
 
 books.delete('/', (req, res) => {
     booksStored = [];
+    console.log("DELETE \n")
     res.sendStatus(204);
 })
 
