@@ -12,7 +12,9 @@ books.get('/', (req, res) => {
             return 1
     })
 
-    res.status(201).json(booksStored)
+
+
+    res.status(200).json({ "books": booksStored });
 })
 
 books.post('/', (req, res) => {
@@ -20,7 +22,7 @@ books.post('/', (req, res) => {
     bookToStore.id = booksStored.length + 1;
     booksStored.push(bookToStore);
 
-    res.status(200).json(bookToStore)
+    res.status(201).json(bookToStore)
 })
 
 books.delete('/', (req, res) => {
